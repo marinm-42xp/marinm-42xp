@@ -1,19 +1,10 @@
 <!-- ░░░░░░░░░░░░░░░░░░ BANNER ░░░░░░░░░░░░░░░░░░ -->
 <div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:000000,50:0b1f3d,100:3b82f6&height=230&section=header&text=María%20Alejandra%20Marín&fontSize=48&fontColor=ffffff&fontAlignY=38&desc=%2F%2F%20Software%20Documentation%20Engineering%20&descSize=16&descAlignY=60&descColor=60a5fa&animation=fadeIn" alt="banner" />
+<img width="100%" src="assets/banner.svg" alt="banner" />
 
-<!--
-  OPCIONAL: reemplaza el banner de arriba por tu propia imagen
-  (por ejemplo la del apretón de manos wireframe + halftone).
-  1) Crea una carpeta  assets/  en este repo y sube la imagen como  assets/banner.jpg
-  2) Descomenta la línea de abajo y borra la <img> de capsule-render.
-
-  <img width="100%" src="assets/banner.jpg" alt="banner" />
--->
-<img width="100%" src="assets/banner.jpg" alt="banner" />
 <a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=20&duration=3200&pause=900&color=60A5FA&center=true&vCenter=true&width=680&height=40&lines=%3E+whoiam+%E2%86%92+Software+Engineer;%3E+Estudiante+de+Ingenier%C3%ADa+Inform%C3%A1tica+%40+UCAB;%3E+Building+meaningful+things_" alt="typing" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=20&duration=3200&pause=900&color=60A5FA&center=true&vCenter=true&width=680&height=40&lines=%3E+whoami+%E2%86%92+Software+Engineer;%3E+Computer+Engineering+Student+%40+UCAB;%3E+Building+meaningful+things_" alt="typing" />
 </a>
 
 <br/>
@@ -35,7 +26,7 @@
 <a href="mailto:maria1313marin@gmail.com">
   <img src="https://img.shields.io/badge/GMAIL-000000?style=for-the-badge&logo=gmail&logoColor=60a5fa" />
 </a>
-<!-- <a href="https://TU_PORTAFOLIO.com"><img src="https://img.shields.io/badge/PORTFOLIO-000000?style=for-the-badge&logo=vercel&logoColor=60a5fa" /></a> -->
+<!-- <a href="https://YOUR_PORTFOLIO.com"><img src="https://img.shields.io/badge/PORTFOLIO-000000?style=for-the-badge&logo=vercel&logoColor=60a5fa" /></a> -->
 
 </div>
 
@@ -47,16 +38,16 @@
 ```js
 const maria = {
   name:      "María Alejandra Marín",
-  studies:   "Ingeniería Informática · UCAB · 6to semestre",
-  passion:   ["Sistemas de bases de datos", "Ingeniería de software"],
-  strengths: ["Proactiva", "Organizada", "Responsable", "Trabajo en equipo"],
+  studies:   "Computer Engineering · UCAB · 6th semester",
+  passion:   ["Database systems", "Software engineering"],
+  strengths: ["Proactive", "Organized", "Responsible", "Teamwork"],
   stack:     ["JavaScript", "React", "Node.js", "PostgreSQL", "Docker", "n8n"],
-  languages: { es: "Nativo", en: "Profesional básico" },
-  mindset:   "Si lo puedes imaginar, lo puedes programar.",
+  languages: { es: "Native", en: "Professional working" },
+  mindset:   "If you can imagine it, you can code it.",
 };
 ```
 
-> Soy estudiante de Ingeniería Informática apasionada por los **sistemas de bases de datos** y la **ingeniería de software**. Me gusta construir sistemas completos, desde el modelo de datos hasta la interfaz, y cuidar que cada capa sea clara, ordenada y fácil de usar. Me motiva aprender y adaptarme rápido a nuevos entornos.
+> I am a Computer Engineering student passionate about **database systems** and **software engineering**. I enjoy building end-to-end systems, from data modeling to user interfaces, ensuring that every layer is clean, well-structured, and easy to use. I am driven by continuous learning and adapting quickly to new environments.
 
 <br/>
 
@@ -65,7 +56,7 @@ const maria = {
 
 <div align="center">
 
-**Lenguajes**
+**Languages**
 
 <img src="https://skillicons.dev/icons?i=js,py,java,html,css&theme=dark" />
 <img src="https://img.shields.io/badge/PL%2FSQL-000000?style=flat-square&logo=oracle&logoColor=60a5fa" />
@@ -74,17 +65,17 @@ const maria = {
 
 <img src="https://skillicons.dev/icons?i=react,vite,tailwind,bootstrap&theme=dark" />
 
-**Backend & Automatización**
+**Backend & Automation**
 
 <img src="https://skillicons.dev/icons?i=nodejs,express&theme=dark" />
 <img src="https://img.shields.io/badge/n8n-000000?style=flat-square&logo=n8n&logoColor=60a5fa" />
 
-**Bases de datos**
+**Databases**
 
 <img src="https://skillicons.dev/icons?i=postgres,mysql&theme=dark" />
 <img src="https://img.shields.io/badge/Oracle_DB-000000?style=flat-square&logo=oracle&logoColor=60a5fa" />
 
-**Herramientas & Diseño**
+**Tools & Design**
 
 <img src="https://skillicons.dev/icons?i=git,github,docker,vscode,figma,ai,ps&theme=dark" />
 
@@ -100,17 +91,17 @@ const maria = {
     <td valign="top">
 
 ### 📇 CRM · 2jmcMedios
-`Feb 2026 – Abr 2026`
+`Feb 2026 – Apr 2026`
 
-Sistema de Gestión Comercial totalmente personalizado para la empresa 2jmcMedios. Arquitectura **MVC de silos estrictos**.
+Fully customized Commercial Management System for 2jmcMedios. Strict **MVC silo architecture**.
 
-- API REST con **Express.js**: clientes, contactos, vendedores y visitas
-- **PostgreSQL** desplegado con **Docker Compose** y aprovisionamiento automático vía SQL
-- Interfaz dinámica con **React + Vite** y diseño responsivo con **Tailwind CSS**
+- REST API built with **Express.js**: clients, contacts, sales reps, and visits
+- **PostgreSQL** deployed with **Docker Compose** and automated provisioning via SQL
+- Dynamic frontend with **React + Vite** and responsive design using **Tailwind CSS**
 
 `JavaScript` `Node.js` `Express` `React` `Vite` `PostgreSQL` `Docker` `Tailwind`
 
-[**Ver repositorio →**](https://github.com/marinm-42xp/crm-2jmcmedios)
+[**View repository →**](https://github.com/marinm-42xp/crm-2jmcmedios)
 
 </td>
   </tr>
@@ -118,13 +109,13 @@ Sistema de Gestión Comercial totalmente personalizado para la empresa 2jmcMedio
     <td valign="top">
 
 ### 🍦 Il Gelato Della Nonna
-`Ingeniería de Software · UCAB`
+`Software Engineering · UCAB`
 
-Proyecto web desarrollado en equipo para la materia de Ingeniería de Software. Arquitectura de componentes **MVC**, backend con Express y base de datos gestionada con Docker.
+Team-developed web project for the Software Engineering course. **MVC** component architecture, backend with Express, and database managed with Docker.
 
 `JavaScript` `Express` `MySQL` `Docker` `MVC`
 
-[**Ver repositorio →**](https://github.com/marinm-42xp/Il-Gelato-Della-Nonna)
+[**View repository →**](https://github.com/marinm-42xp/Il-Gelato-Della-Nonna)
 
 </td>
   </tr>
@@ -132,16 +123,16 @@ Proyecto web desarrollado en equipo para la materia de Ingeniería de Software. 
     <td valign="top">
 
 ### 🧱 LEGO · UCAB · SBD
-`Oct 2025 – Ene 2026`
+`Oct 2025 – Jan 2026`
 
-Proyecto de Sistemas de Bases de Datos: sistema de gestión desarrollado en **PL/SQL** sobre **Oracle Database**.
+Database Systems project: management system developed in **PL/SQL** on **Oracle Database**.
 
-- Procedimientos almacenados y consultas complejas
-- Diseño y optimización de esquemas de base de datos
+- Stored procedures and complex queries
+- Database schema design and optimization
 
 `PL/SQL` `Oracle Database`
 
-[**Ver repositorio →**](https://github.com/marinm-42xp/LEGO-UCAB-SBD)
+[**View repository →**](https://github.com/marinm-42xp/LEGO-UCAB-SBD)
 
 </td>
   </tr>
@@ -153,11 +144,11 @@ Proyecto de Sistemas de Bases de Datos: sistema de gestión desarrollado en **PL
 ## `> experience`
 
 ```text
-[2025 → presente]  Asesor de medios digitales
-                   Parroquia San Pío X · Templo San Judas Tadeo
-                   > Gestión y creación de contenido para Instagram y Facebook
-                   > Diseño y programación de publicaciones, historias y cápsulas
-                   > Comunicación digital que fortalece el sentido de comunidad
+[2025 → present]   Digital Media Advisor
+                   San Pío X Parish · San Judas Tadeo Temple
+                   > Content creation and management for Instagram and Facebook
+                   > Design and scheduling of posts, stories, and reels/capsules
+                   > Digital communication strengthening community engagement
 ```
 
 <br/>
@@ -168,10 +159,10 @@ Proyecto de Sistemas de Bases de Datos: sistema de gestión desarrollado en **PL
 ```bash
 $ cat focus.txt
 
-[■■■■■■■■□□] Modelado y optimización de bases de datos
-[■■■■■■■□□□] Technical Writer
-[■■■■■□□□□□] Automatización de flujos con n8n
-[■■■■□□□□□□] Metodologías ágiles · Scrum
+[■■■■■■■■□□] Database modeling and optimization
+[■■■■■■■□□□] Technical Writing
+[■■■■■□□□□□] Workflow automation with n8n
+[■■■■□□□□□□] Agile methodologies · Scrum
 
 $ _
 ```
@@ -206,8 +197,8 @@ $ _
 
 ```text
 ┌──────────────────────────────────────────────┐
-│  ¿Tienes una idea o un proyecto en mente?    │
-│  Construyámoslo.  →  hablemos por LinkedIn   │
+│    Have an idea or a project in mind?        │
+│    Let's build it. → Connect on LinkedIn     │
 └──────────────────────────────────────────────┘
 ```
 
