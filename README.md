@@ -11,7 +11,7 @@
 
   <img width="100%" src="assets/banner.jpg" alt="banner" />
 -->
-
+<img width="100%" src="assets/banner.jpg" alt="banner" />
 <a href="https://git.io/typing-svg">
   <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=20&duration=3200&pause=900&color=60A5FA&center=true&vCenter=true&width=680&height=40&lines=%3E+whoiam+%E2%86%92+Software+Engineer;%3E+Estudiante+de+Ingenier%C3%ADa+Inform%C3%A1tica+%40+UCAB;%3E+Building+meaningful+things_" alt="typing" />
 </a>
