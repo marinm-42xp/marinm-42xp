@@ -3,17 +3,6 @@
 
 <img width="100%" src="assets/banner.svg" alt="banner" />
 
-<<<<<<< HEAD
-=======
-<!--
-  OPCIONAL: reemplaza el banner de arriba por tu propia imagen
-  (por ejemplo la del apretón de manos wireframe + halftone).
-  1) Crea una carpeta  assets/  en este repo y sube la imagen como  assets/banner.jpg
-  2) Descomenta la línea de abajo y borra la <img> de capsule-render.
-
-  <img width="100%" src="assets/banner.jpg" alt="banner" />
--->
->>>>>>> 9a87735cf29d908ee6c22881a52c6b4fa0d1a668
 <a href="https://git.io/typing-svg">
   <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=20&duration=3200&pause=900&color=60A5FA&center=true&vCenter=true&width=680&height=40&lines=%3E+whoami+%E2%86%92+Software+Engineer;%3E+Computer+Engineering+Student+%40+UCAB;%3E+Building+meaningful+things_" alt="typing" />
 </a>
