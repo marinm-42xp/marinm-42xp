@@ -7,21 +7,21 @@
       <stop offset="100%" stop-color="#020308"/>
     </linearGradient>
 
-    <!-- Deep Blue Shimmer Strip on far left -->
+    <!-- Deep Blue Shimmer Strip -->
     <linearGradient id="strip-blue" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#1d4ed8" stop-opacity="0"/>
-      <stop offset="35%" stop-color="#2563eb" stop-opacity="0.3"/>
-      <stop offset="70%" stop-color="#1e40af" stop-opacity="0.15"/>
+      <stop offset="35%" stop-color="#2563eb" stop-opacity="0.35"/>
+      <stop offset="70%" stop-color="#38bdf8" stop-opacity="0.2"/>
       <stop offset="100%" stop-color="#0f172a" stop-opacity="0"/>
     </linearGradient>
 
-    <!-- Blur Filters for side ambiance only -->
-    <filter id="blur-heavy" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="60"/>
+    <!-- Blur Filters for rich ambient glow -->
+    <filter id="blur-heavy" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="65"/>
     </filter>
 
-    <filter id="blur-medium" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="30"/>
+    <filter id="blur-medium" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="32"/>
     </filter>
   </defs>
 
@@ -34,22 +34,53 @@
       font-family: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', Menlo, Monaco, Consolas, monospace;
     }
 
-    /* Ambient Side Movement */
+    /* Dynamic, Noticeable Fluid Orb Movement */
     @keyframes floatLeftOrb {
-      0%, 100% {
+      0% {
         transform: translate(0px, 0px) scale(1);
+        opacity: 0.75;
       }
-      50% {
-        transform: translate(30px, -15px) scale(1.1);
+      33% {
+        transform: translate(65px, -30px) scale(1.22);
+        opacity: 0.95;
+      }
+      66% {
+        transform: translate(30px, 35px) scale(0.92);
+        opacity: 0.65;
+      }
+      100% {
+        transform: translate(0px, 0px) scale(1);
+        opacity: 0.75;
       }
     }
 
     @keyframes floatRightOrb {
+      0% {
+        transform: translate(0px, 0px) scale(1);
+        opacity: 0.75;
+      }
+      33% {
+        transform: translate(-70px, 35px) scale(1.25);
+        opacity: 0.95;
+      }
+      66% {
+        transform: translate(-30px, -35px) scale(0.9);
+        opacity: 0.65;
+      }
+      100% {
+        transform: translate(0px, 0px) scale(1);
+        opacity: 0.75;
+      }
+    }
+
+    @keyframes floatTopGlow {
       0%, 100% {
         transform: translate(0px, 0px) scale(1);
+        opacity: 0.25;
       }
       50% {
-        transform: translate(-30px, 20px) scale(1.1);
+        transform: translate(-30px, 20px) scale(1.3);
+        opacity: 0.55;
       }
     }
 
@@ -65,12 +96,12 @@
 
     @keyframes shimmerMove {
       0%, 100% {
-        transform: translateX(-30px);
+        transform: translateX(-50px);
         opacity: 0.2;
       }
       50% {
-        transform: translateX(30px);
-        opacity: 0.45;
+        transform: translateX(60px);
+        opacity: 0.55;
       }
     }
 
@@ -80,49 +111,54 @@
         transform: scale(0.8);
       }
       50% {
-        opacity: 0.9;
-        transform: scale(1.2);
+        opacity: 1;
+        transform: scale(1.35);
       }
     }
 
     .anim-left-orb {
-      animation: floatLeftOrb 9s ease-in-out infinite;
-      transform-origin: 200px 180px;
+      animation: floatLeftOrb 6.5s ease-in-out infinite;
+      transform-origin: 260px 180px;
     }
 
     .anim-right-orb {
-      animation: floatRightOrb 10s ease-in-out infinite;
-      transform-origin: 1000px 180px;
+      animation: floatRightOrb 7s ease-in-out infinite;
+      transform-origin: 940px 180px;
+    }
+
+    .anim-top-glow {
+      animation: floatTopGlow 8s ease-in-out infinite;
+      transform-origin: 600px 70px;
     }
 
     .anim-outer-radar {
-      animation: rotateOuterRadar 30s linear infinite;
+      animation: rotateOuterRadar 24s linear infinite;
       transform-origin: 600px 195px;
     }
 
     .anim-inner-radar {
-      animation: rotateInnerRadar 20s linear infinite;
+      animation: rotateInnerRadar 16s linear infinite;
       transform-origin: 600px 195px;
     }
 
     .anim-shimmer {
-      animation: shimmerMove 8s ease-in-out infinite;
+      animation: shimmerMove 6.5s ease-in-out infinite;
     }
 
     .star-1 {
-      animation: twinkleStar 3.2s ease-in-out infinite;
+      animation: twinkleStar 2.8s ease-in-out infinite;
       transform-origin: 85px 110px;
     }
     .star-2 {
-      animation: twinkleStar 4.1s ease-in-out 1.2s infinite;
+      animation: twinkleStar 3.6s ease-in-out 1s infinite;
       transform-origin: 1110px 120px;
     }
     .star-3 {
-      animation: twinkleStar 3.7s ease-in-out 0.6s infinite;
+      animation: twinkleStar 3.2s ease-in-out 0.5s infinite;
       transform-origin: 1145px 240px;
     }
     .star-4 {
-      animation: twinkleStar 4.5s ease-in-out 2s infinite;
+      animation: twinkleStar 4s ease-in-out 1.8s infinite;
       transform-origin: 75px 260px;
     }
   </style>
@@ -131,40 +167,48 @@
   <rect x="12" y="12" width="1176" height="336" rx="20" fill="url(#bg-grad)"/>
   <rect x="12" y="12" width="1176" height="336" rx="20" fill="none" stroke="#1e293b" stroke-width="1.2" stroke-opacity="0.5"/>
 
-  <!-- Side Ambient Blue Orbs (Placed on the far sides to keep center dark & readable) -->
+  <!-- Upper Ambient Glow (Gentle subtle ceiling light) -->
+  <g class="anim-top-glow">
+    <circle cx="600" cy="50" r="160" fill="#1e40af" opacity="0.3" filter="url(#blur-heavy)"/>
+  </g>
+
+  <!-- Left Ambient Blue Orbs (Brought closer and more dynamic) -->
   <g class="anim-left-orb">
-    <circle cx="180" cy="180" r="150" fill="#1e3a8a" opacity="0.6" filter="url(#blur-heavy)"/>
-    <circle cx="260" cy="160" r="110" fill="#1d4ed8" opacity="0.4" filter="url(#blur-heavy)"/>
+    <circle cx="250" cy="180" r="170" fill="#1e40af" opacity="0.75" filter="url(#blur-heavy)"/>
+    <circle cx="330" cy="160" r="130" fill="#2563eb" opacity="0.6" filter="url(#blur-heavy)"/>
+    <circle cx="280" cy="220" r="100" fill="#3b82f6" opacity="0.35" filter="url(#blur-medium)"/>
   </g>
 
+  <!-- Right Ambient Blue Orbs (Brought closer and more dynamic) -->
   <g class="anim-right-orb">
-    <circle cx="1020" cy="180" r="160" fill="#0369a1" opacity="0.55" filter="url(#blur-heavy)"/>
-    <circle cx="940" cy="190" r="120" fill="#0284c7" opacity="0.4" filter="url(#blur-heavy)"/>
+    <circle cx="950" cy="180" r="180" fill="#0284c7" opacity="0.75" filter="url(#blur-heavy)"/>
+    <circle cx="870" cy="190" r="140" fill="#0369a1" opacity="0.6" filter="url(#blur-heavy)"/>
+    <circle cx="920" cy="140" r="100" fill="#38bdf8" opacity="0.35" filter="url(#blur-medium)"/>
   </g>
 
-  <!-- Left-Side Light Strip -->
+  <!-- Left-Side Ambient Shimmer Strip -->
   <g class="anim-shimmer">
-    <rect x="40" y="150" width="350" height="65" fill="url(#strip-blue)" filter="url(#blur-medium)"/>
+    <rect x="90" y="145" width="400" height="70" fill="url(#strip-blue)" filter="url(#blur-medium)"/>
   </g>
 
   <!-- Twinkling Micro Stars -->
-  <circle class="star-1" cx="85" cy="110" r="2" fill="#38bdf8"/>
-  <circle class="star-2" cx="1110" cy="120" r="2.2" fill="#60a5fa"/>
+  <circle class="star-1" cx="85" cy="110" r="2.2" fill="#38bdf8"/>
+  <circle class="star-2" cx="1110" cy="120" r="2.4" fill="#60a5fa"/>
   <circle class="star-3" cx="1145" cy="240" r="1.8" fill="#93c5fd"/>
-  <circle class="star-4" cx="75" cy="260" r="1.5" fill="#38bdf8"/>
+  <circle class="star-4" cx="75" cy="260" r="1.6" fill="#38bdf8"/>
 
   <!-- Minimalist Sci-Fi Corner Brackets -->
   <path d="M 64 42 L 44 42 L 44 62" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.85"/>
   <path d="M 1136 42 L 1156 42 L 1156 62" stroke="#60a5fa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
 
-  <!-- Subtle Concentric Tech Radar Rings (Low contrast for clean backdrop) -->
+  <!-- Subtle Concentric Tech Radar Rings -->
   <g class="anim-outer-radar">
-    <circle cx="600" cy="195" r="145" stroke="#38bdf8" stroke-width="0.8" stroke-opacity="0.08" stroke-dasharray="6 8" fill="none"/>
+    <circle cx="600" cy="195" r="145" stroke="#38bdf8" stroke-width="0.8" stroke-opacity="0.1" stroke-dasharray="6 8" fill="none"/>
   </g>
   <g class="anim-inner-radar">
-    <circle cx="600" cy="195" r="95" stroke="#60a5fa" stroke-width="0.7" stroke-opacity="0.09" stroke-dasharray="4 6" fill="none"/>
+    <circle cx="600" cy="195" r="95" stroke="#60a5fa" stroke-width="0.7" stroke-opacity="0.11" stroke-dasharray="4 6" fill="none"/>
   </g>
-  <circle cx="600" cy="195" r="170" stroke="#ffffff" stroke-width="0.6" stroke-opacity="0.04" fill="none"/>
+  <circle cx="600" cy="195" r="170" stroke="#ffffff" stroke-width="0.6" stroke-opacity="0.05" fill="none"/>
 
   <!-- ==================== CENTER CONTENT ==================== -->
   <!-- Main Title: Crisp, solid white, zero blur, maximum contrast & clarity -->
