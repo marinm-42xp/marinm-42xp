@@ -25,18 +25,18 @@
       <feGaussianBlur stdDeviation="30"/>
     </filter>
 
-    <filter id="glow-title" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="6" result="blur1"/>
-      <feGaussianBlur stdDeviation="14" result="blur2"/>
+    <!-- Crisp Subtle Text Glow (Sharp and highly legible) -->
+    <filter id="crisp-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.22  0 0 0 0 0.74  0 0 0 0 0.97  0 0 0 0.45 0"/>
       <feMerge>
-        <feMergeNode in="blur2"/>
-        <feMergeNode in="blur1"/>
+        <feMergeNode/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
 
     <filter id="glow-sub" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feGaussianBlur stdDeviation="2" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
@@ -47,7 +47,7 @@
   <style>
     .title-font {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      font-weight: 900;
+      font-weight: 800;
     }
     .mono-font {
       font-family: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', Menlo, Monaco, Consolas, monospace;
@@ -74,12 +74,12 @@
 
     @keyframes pulseCenterGlow {
       0%, 100% {
-        opacity: 0.35;
+        opacity: 0.3;
         transform: scale(1);
       }
       50% {
-        opacity: 0.75;
-        transform: scale(1.22);
+        opacity: 0.65;
+        transform: scale(1.2);
       }
     }
 
@@ -109,17 +109,6 @@
       50% {
         transform: translateX(40px);
         opacity: 0.55;
-      }
-    }
-
-    @keyframes pulseTextGlow {
-      0%, 100% {
-        opacity: 0.92;
-        filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.45));
-      }
-      50% {
-        opacity: 1;
-        filter: drop-shadow(0 0 24px rgba(96, 165, 250, 0.85));
       }
     }
 
@@ -164,10 +153,6 @@
       transform-origin: center;
     }
 
-    .anim-title {
-      animation: pulseTextGlow 5s ease-in-out infinite;
-    }
-
     .star-1 {
       animation: twinkleStar 3.2s ease-in-out infinite;
       transform-origin: 95px 110px;
@@ -202,8 +187,8 @@
   </g>
 
   <g class="anim-center-glow">
-    <circle cx="600" cy="195" r="180" fill="#1d4ed8" opacity="0.4" filter="url(#blur-heavy)"/>
-    <circle cx="600" cy="210" r="130" fill="#38bdf8" opacity="0.25" filter="url(#blur-medium)"/>
+    <circle cx="600" cy="195" r="180" fill="#1d4ed8" opacity="0.35" filter="url(#blur-heavy)"/>
+    <circle cx="600" cy="210" r="130" fill="#38bdf8" opacity="0.2" filter="url(#blur-medium)"/>
   </g>
 
   <!-- Animated Ambient Light Strip across center-left -->
@@ -231,15 +216,13 @@
   <circle cx="600" cy="195" r="175" stroke="#ffffff" stroke-width="0.8" stroke-opacity="0.05" fill="none"/>
 
   <!-- ==================== CENTER CONTENT ==================== -->
-  <!-- Main Name (Positioned lower and balanced) -->
-  <g class="anim-title">
-    <text class="title-font" x="600" y="195" text-anchor="middle" font-size="44" fill="#ffffff" letter-spacing="8" filter="url(#glow-title)">
-      MARÍA ALEJANDRA MARÍN
-    </text>
-  </g>
+  <!-- Main Title: Crisp, sharp white with minimal subtle glow for maximum readability -->
+  <text class="title-font" x="600" y="192" text-anchor="middle" font-size="34" fill="#ffffff" letter-spacing="6" filter="url(#crisp-glow)">
+    WELCOME TO MARÍA MARÍN'S GITHUB
+  </text>
 
   <!-- Blue Subtitle: Software Documentation Engineering -->
-  <text class="mono-font" x="600" y="248" text-anchor="middle" font-size="15" font-weight="700" fill="#38bdf8" letter-spacing="5" filter="url(#glow-sub)">
+  <text class="mono-font" x="600" y="244" text-anchor="middle" font-size="14" font-weight="700" fill="#38bdf8" letter-spacing="4.5" filter="url(#glow-sub)">
     S O F T W A R E   D O C U M E N T A T I O N   E N G I N E E R I N G
   </text>
 </svg>
