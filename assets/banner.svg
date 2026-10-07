@@ -1,217 +1,173 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
   <defs>
-    <!-- Gradients -->
-    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#020617"/>
-      <stop offset="35%" stop-color="#071328"/>
-      <stop offset="70%" stop-color="#0b1f3d"/>
-      <stop offset="100%" stop-color="#020817"/>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-fill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#04060c"/>
+      <stop offset="50%" stop-color="#060913"/>
+      <stop offset="100%" stop-color="#030408"/>
     </linearGradient>
 
-    <linearGradient id="accent-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38bdf8"/>
-      <stop offset="50%" stop-color="#60a5fa"/>
-      <stop offset="100%" stop-color="#a855f7"/>
-    </linearGradient>
-
-    <linearGradient id="blue-glow" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.4"/>
+    <!-- Horizontal Ambient Light Strip -->
+    <linearGradient id="strip-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#6366f1" stop-opacity="0.35"/>
+      <stop offset="70%" stop-color="#3b82f6" stop-opacity="0.2"/>
       <stop offset="100%" stop-color="#1d4ed8" stop-opacity="0"/>
     </linearGradient>
 
-    <linearGradient id="text-title-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="40%" stop-color="#e0f2fe"/>
-      <stop offset="70%" stop-color="#93c5fd"/>
-      <stop offset="100%" stop-color="#38bdf8"/>
-    </linearGradient>
+    <!-- Glow Filters -->
+    <filter id="blur-heavy" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="70"/>
+    </filter>
 
-    <linearGradient id="grid-fade" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#1e3a8a" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#2563eb" stop-opacity="0.25"/>
-      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.4"/>
-    </linearGradient>
+    <filter id="blur-medium" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="35"/>
+    </filter>
 
-    <!-- Filters -->
-    <filter id="glow-bright" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="6" result="blur1"/>
-      <feGaussianBlur stdDeviation="15" result="blur2"/>
+    <filter id="name-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
       <feMerge>
-        <feMergeNode in="blur2"/>
-        <feMergeNode in="blur1"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
 
-    <filter id="glow-soft" x="-20%" y="-20%" width="140%" height="140%">
+    <filter id="subtle-glow" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="3" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-
-    <!-- Patterns -->
-    <pattern id="dot-grid" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
-      <circle cx="15" cy="15" r="1.2" fill="#38bdf8" fill-opacity="0.18"/>
-    </pattern>
-
-    <pattern id="circuit-grid" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
-      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#1d4ed8" stroke-width="0.75" stroke-opacity="0.2"/>
-    </pattern>
   </defs>
 
   <style>
-    .mono { font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace; }
-    .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
-    @keyframes pulse-fast {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 0.9; }
+    .title-font {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 900;
+    }
+    .mono-font {
+      font-family: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', Menlo, Monaco, Consolas, monospace;
     }
   </style>
 
-  <!-- Background Base -->
-  <rect width="1200" height="380" fill="url(#bg-grad)"/>
+  <!-- Card Background -->
+  <rect x="15" y="15" width="1170" height="490" rx="24" fill="url(#bg-fill)"/>
+  <rect x="15" y="15" width="1170" height="490" rx="24" fill="none" stroke="#1e293b" stroke-width="1.2" stroke-opacity="0.5"/>
 
-  <!-- Background Grid & Dots -->
-  <rect width="1200" height="380" fill="url(#circuit-grid)"/>
-  <rect width="1200" height="380" fill="url(#dot-grid)"/>
+  <!-- Colored Ambient Orbs (Blurred Background Atmosphere) -->
+  <!-- Left Purple/Indigo Orb -->
+  <circle cx="280" cy="200" r="170" fill="#581c87" opacity="0.65" filter="url(#blur-heavy)"/>
+  <circle cx="240" cy="240" r="130" fill="#312e81" opacity="0.75" filter="url(#blur-heavy)"/>
 
-  <!-- Radial Ambient Glows -->
-  <circle cx="200" cy="80" r="260" fill="#1e40af" fill-opacity="0.25" filter="url(#glow-bright)"/>
-  <circle cx="1000" cy="300" r="280" fill="#0284c7" fill-opacity="0.18" filter="url(#glow-bright)"/>
-  <circle cx="600" cy="190" r="320" fill="#2563eb" fill-opacity="0.12" filter="url(#glow-bright)"/>
+  <!-- Right Teal/Cyan Orb -->
+  <circle cx="940" cy="240" r="180" fill="#042f2e" opacity="0.7" filter="url(#blur-heavy)"/>
+  <circle cx="960" cy="220" r="130" fill="#0d9488" opacity="0.45" filter="url(#blur-heavy)"/>
 
-  <!-- Abstract Tech Wireframe / Perspective Grid at bottom -->
-  <g opacity="0.4">
-    <!-- Horizon Line -->
-    <line x1="0" y1="320" x2="1200" y2="320" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.4"/>
-    <line x1="0" y1="340" x2="1200" y2="340" stroke="#38bdf8" stroke-width="1.2" stroke-opacity="0.6"/>
-    <line x1="0" y1="365" x2="1200" y2="365" stroke="#60a5fa" stroke-width="1.5" stroke-opacity="0.8"/>
-    <!-- Perspective Rays -->
-    <line x1="600" y1="280" x2="50" y2="380" stroke="#2563eb" stroke-width="1"/>
-    <line x1="600" y1="280" x2="200" y2="380" stroke="#2563eb" stroke-width="1"/>
-    <line x1="600" y1="280" x2="350" y2="380" stroke="#2563eb" stroke-width="1"/>
-    <line x1="600" y1="280" x2="500" y2="380" stroke="#3b82f6" stroke-width="1"/>
-    <line x1="600" y1="280" x2="700" y2="380" stroke="#3b82f6" stroke-width="1"/>
-    <line x1="600" y1="280" x2="850" y2="380" stroke="#2563eb" stroke-width="1"/>
-    <line x1="600" y1="280" x2="1000" y2="380" stroke="#2563eb" stroke-width="1"/>
-    <line x1="600" y1="280" x2="1150" y2="380" stroke="#2563eb" stroke-width="1"/>
-  </g>
+  <!-- Upper Right Pink/Magenta Accent -->
+  <circle cx="780" cy="140" r="110" fill="#701a75" opacity="0.35" filter="url(#blur-heavy)"/>
 
-  <!-- Left Side Abstract Tech Circuit / Code Tree -->
-  <g opacity="0.6" stroke="#38bdf8" stroke-width="1.5" fill="none">
-    <path d="M 50 190 L 140 190 L 190 140 L 280 140" stroke-dasharray="6,4"/>
-    <circle cx="50" cy="190" r="3.5" fill="#38bdf8"/>
-    <circle cx="190" cy="140" r="3.5" fill="#38bdf8"/>
-    <circle cx="280" cy="140" r="4" fill="#60a5fa" filter="url(#glow-soft)"/>
+  <!-- Center-left Ambient Light Strip -->
+  <rect x="35" y="185" width="400" height="75" fill="url(#strip-grad)" filter="url(#blur-medium)"/>
 
-    <path d="M 90 260 L 160 260 L 220 200 L 290 200"/>
-    <circle cx="90" cy="260" r="3" fill="#38bdf8"/>
-    <circle cx="290" cy="200" r="3.5" fill="#60a5fa"/>
+  <!-- Sparkle dots / star specks -->
+  <circle cx="95" cy="130" r="2.2" fill="#38bdf8" opacity="0.75"/>
+  <circle cx="1090" cy="155" r="2.2" fill="#f472b6" opacity="0.8"/>
+  <circle cx="1140" cy="275" r="1.8" fill="#94a3b8" opacity="0.55"/>
+  <circle cx="75" cy="330" r="1.6" fill="#60a5fa" opacity="0.45"/>
+  <circle cx="1040" cy="320" r="1.5" fill="#38bdf8" opacity="0.4"/>
 
-    <path d="M 120 90 L 180 90 L 210 120 L 250 120" stroke-opacity="0.4"/>
-  </g>
+  <!-- Corner Brackets -->
+  <!-- Top Left Bracket (Cyan) -->
+  <path d="M 68 45 L 48 45 L 48 65" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.9"/>
+  <!-- Top Right Bracket (Muted Lavender) -->
+  <path d="M 1132 45 L 1152 45 L 1152 65" stroke="#c084fc" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.7"/>
 
-  <!-- Right Side Abstract Hexagons & Node Clusters -->
-  <g opacity="0.65">
-    <!-- Constellation lines -->
-    <path d="M 920 120 L 980 90 L 1060 110 L 1120 80" stroke="#60a5fa" stroke-width="1.2" fill="none" opacity="0.7"/>
-    <path d="M 980 90 L 1020 170 L 1060 110" stroke="#38bdf8" stroke-width="1.2" fill="none" opacity="0.7"/>
-    <path d="M 1020 170 L 1110 190 L 1150 250" stroke="#2563eb" stroke-width="1.2" fill="none" opacity="0.7"/>
-    <path d="M 940 230 L 1020 170" stroke="#38bdf8" stroke-width="1" stroke-dasharray="4,4" fill="none" opacity="0.5"/>
+  <!-- Subtle Center Rings / Tech Radar -->
+  <circle cx="600" cy="215" r="185" stroke="#ffffff" stroke-width="1" stroke-opacity="0.06" fill="none"/>
+  <circle cx="600" cy="215" r="120" stroke="#38bdf8" stroke-width="0.8" stroke-opacity="0.09" stroke-dasharray="4 6" fill="none"/>
 
-    <!-- Nodes -->
-    <circle cx="920" cy="120" r="3" fill="#93c5fd"/>
-    <circle cx="980" cy="90" r="4.5" fill="#38bdf8" filter="url(#glow-soft)"/>
-    <circle cx="1060" cy="110" r="5" fill="#60a5fa" filter="url(#glow-soft)"/>
-    <circle cx="1120" cy="80" r="3.5" fill="#93c5fd"/>
-    <circle cx="1020" cy="170" r="5.5" fill="#38bdf8" filter="url(#glow-bright)"/>
-    <circle cx="1110" cy="190" r="4" fill="#60a5fa"/>
-    <circle cx="1150" cy="250" r="3" fill="#93c5fd"/>
-    <circle cx="940" cy="230" r="3" fill="#38bdf8"/>
+  <!-- ==================== CENTER CONTENT ==================== -->
+  <!-- Main Name -->
+  <text class="title-font" x="600" y="165" text-anchor="middle" font-size="44" fill="#ffffff" letter-spacing="8" filter="url(#name-glow)">
+    MARÍA ALEJANDRA MARÍN
+  </text>
 
-    <!-- Geometric Hexagons -->
-    <polygon points="1080,240 1110,222 1140,240 1140,275 1110,292 1080,275" stroke="#38bdf8" stroke-width="1.2" fill="#0369a1" fill-opacity="0.1" filter="url(#glow-soft)"/>
-    <polygon points="950,260 970,248 990,260 990,284 970,296 950,284" stroke="#2563eb" stroke-width="1" fill="#1e3a8a" fill-opacity="0.1"/>
-  </g>
+  <!-- Primary Subtitle (Cyan Tracked Caps) -->
+  <text class="mono-font" x="600" y="218" text-anchor="middle" font-size="14.5" font-weight="700" fill="#38bdf8" letter-spacing="6" filter="url(#subtle-glow)">
+    S O F T W A R E   E N G I N E E R
+  </text>
 
-  <!-- Cyber Matrix / Code Streams Watermark -->
-  <g class="mono" font-size="11" fill="#38bdf8" fill-opacity="0.18">
-    <text x="70" y="80">01000100 01000010 01010011</text>
-    <text x="70" y="100">SELECT * FROM architecture</text>
-    <text x="70" y="120">git checkout -b production</text>
-    <text x="960" y="295">const build = async () =&gt; {</text>
-    <text x="960" y="315">  await deploy({ scale: true });</text>
-    <text x="960" y="335">};</text>
-  </g>
+  <!-- Secondary Roles -->
+  <text class="mono-font" x="600" y="268" text-anchor="middle" font-size="13" font-weight="500" fill="#cbd5e1" letter-spacing="3.5">
+    DATABASE SYSTEMS  |  BACKEND ARCHITECTURE
+  </text>
 
-  <!-- Central Frame Container -->
-  <g>
-    <!-- Sci-fi Corner Brackets -->
-    <path d="M 320 80 L 290 80 L 290 110" stroke="#38bdf8" stroke-width="2.5" fill="none" opacity="0.85"/>
-    <path d="M 880 80 L 910 80 L 910 110" stroke="#38bdf8" stroke-width="2.5" fill="none" opacity="0.85"/>
-    <path d="M 290 260 L 290 290 L 320 290" stroke="#38bdf8" stroke-width="2.5" fill="none" opacity="0.85"/>
-    <path d="M 910 260 L 910 290 L 880 290" stroke="#38bdf8" stroke-width="2.5" fill="none" opacity="0.85"/>
+  <!-- Detail Focus Line -->
+  <text class="mono-font" x="600" y="302" text-anchor="middle" font-size="11.5" font-weight="400" fill="#60a5fa" letter-spacing="2.5" opacity="0.85">
+    DATA MODELING  •  API DESIGN  •  SYSTEM INTEGRATION
+  </text>
 
-    <!-- Terminal Status Header Badge -->
-    <g transform="translate(600, 95)">
-      <rect x="-150" y="-16" width="300" height="30" rx="15" fill="#0f172a" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.6"/>
-      <!-- Glowing active dot -->
-      <circle cx="-120" cy="-1" r="5" fill="#22c55e" filter="url(#glow-soft)"/>
-      <circle cx="-120" cy="-1" r="2.5" fill="#ffffff"/>
-      <text class="mono" x="-102" y="4" font-size="12" font-weight="600" fill="#94a3b8" letter-spacing="1">SYSTEM : <tspan fill="#38bdf8">ONLINE</tspan> // 2026.XP</text>
+  <!-- GitHub Subtext -->
+  <text class="mono-font" x="600" y="340" text-anchor="middle" font-size="11.5" font-weight="400" fill="#475569" letter-spacing="2">
+    github.com/marinm-42xp
+  </text>
+
+  <!-- ==================== TECH PILLS BAR ==================== -->
+  <g transform="translate(600, 430)">
+    <!-- Pill 1: JavaScript (Cyan/Sky) -->
+    <g transform="translate(-490, -18)">
+      <rect width="105" height="34" rx="17" fill="#090d16" stroke="#38bdf8" stroke-width="1.2" stroke-opacity="0.7"/>
+      <text class="mono-font" x="52.5" y="22" text-anchor="middle" font-size="12" font-weight="600" fill="#38bdf8">JavaScript</text>
     </g>
 
-    <!-- Main Title: Name -->
-    <text class="sans" x="600" y="180" text-anchor="middle" font-size="46" font-weight="800" fill="url(#text-title-grad)" letter-spacing="3" filter="url(#glow-soft)">
-      MARÍA ALEJANDRA MARÍN
-    </text>
-
-    <!-- Subtitle: Developer Roles with Tech Separator -->
-    <g transform="translate(600, 222)">
-      <text class="mono" x="0" y="0" text-anchor="middle" font-size="16" font-weight="600" fill="#7dd3fc" letter-spacing="2">
-        <tspan fill="#38bdf8">&lt;</tspan>SOFTWARE ENGINEER<tspan fill="#38bdf8"> /&gt;</tspan>
-        <tspan fill="#64748b" font-weight="300"> • </tspan>
-        <tspan fill="#93c5fd">DATABASE SYSTEMS</tspan>
-        <tspan fill="#64748b" font-weight="300"> • </tspan>
-        <tspan fill="#60a5fa">BACKEND ARCHITECTURE</tspan>
-      </text>
+    <!-- Pill 2: React (Blue) -->
+    <g transform="translate(-370, -18)">
+      <rect width="80" height="34" rx="17" fill="#090d16" stroke="#60a5fa" stroke-width="1.2" stroke-opacity="0.7"/>
+      <text class="mono-font" x="40" y="22" text-anchor="middle" font-size="12" font-weight="600" fill="#60a5fa">React</text>
     </g>
 
-    <!-- Tech Badges Pill Bar -->
-    <g transform="translate(600, 268)">
-      <!-- Central tech stack chips -->
-      <g transform="translate(-230, -12)">
-        <rect x="0" y="0" width="80" height="24" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="1" stroke-opacity="0.6"/>
-        <text class="mono" x="40" y="15" text-anchor="middle" font-size="11" fill="#93c5fd">React</text>
-      </g>
-      <g transform="translate(-140, -12)">
-        <rect x="0" y="0" width="85" height="24" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="1" stroke-opacity="0.6"/>
-        <text class="mono" x="42" y="15" text-anchor="middle" font-size="11" fill="#93c5fd">Node.js</text>
-      </g>
-      <g transform="translate(-45, -12)">
-        <rect x="0" y="0" width="100" height="24" rx="12" fill="#1e293b" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.8"/>
-        <text class="mono" x="50" y="15" text-anchor="middle" font-size="11" fill="#38bdf8">PostgreSQL</text>
-      </g>
-      <g transform="translate(65, -12)">
-        <rect x="0" y="0" width="85" height="24" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="1" stroke-opacity="0.6"/>
-        <text class="mono" x="42" y="15" text-anchor="middle" font-size="11" fill="#93c5fd">PL/SQL</text>
-      </g>
-      <g transform="translate(160, -12)">
-        <rect x="0" y="0" width="80" height="24" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="1" stroke-opacity="0.6"/>
-        <text class="mono" x="40" y="15" text-anchor="middle" font-size="11" fill="#93c5fd">Docker</text>
-      </g>
+    <!-- Pill 3: Node.js (Pink/Purple) -->
+    <g transform="translate(-275, -18)">
+      <rect width="90" height="34" rx="17" fill="#090d16" stroke="#c084fc" stroke-width="1.2" stroke-opacity="0.7"/>
+      <text class="mono-font" x="45" y="22" text-anchor="middle" font-size="12" font-weight="600" fill="#c084fc">Node.js</text>
+    </g>
+
+    <!-- Pill 4: Express (Teal) -->
+    <g transform="translate(-170, -18)">
+      <rect width="90" height="34" rx="17" fill="#090d16" stroke="#2dd4bf" stroke-width="1.2" stroke-opacity="0.7"/>
+      <text class="mono-font" x="45" y="22" text-anchor="middle" font-size="12" font-weight="600" fill="#2dd4bf">Express</text>
+    </g>
+
+    <!-- Pill 5: PostgreSQL (White/Cyan Highlight) -->
+    <g transform="translate(-65, -18)">
+      <rect width="115" height="34" rx="17" fill="#090d16" stroke="#e2e8f0" stroke-width="1.2" stroke-opacity="0.85"/>
+      <text class="mono-font" x="57.5" y="22" text-anchor="middle" font-size="12" font-weight="600" fill="#ffffff">PostgreSQL</text>
+    </g>
+
+    <!-- Pill 6: PL/SQL (Rose/Pink) -->
+    <g transform="translate(65, -18)">
+      <rect width="90" height="34" rx="17" fill="#090d16" stroke="#f472b6" stroke-width="1.2" stroke-opacity="0.7"/>
+      <text class="mono-font" x="45" y="22" text-anchor="middle" font-size="12" font-weight="600" fill="#f472b6">PL/SQL</text>
+    </g>
+
+    <!-- Pill 7: Docker (Sky Blue) -->
+    <g transform="translate(170, -18)">
+      <rect width="85" height="34" rx="17" fill="#090d16" stroke="#38bdf8" stroke-width="1.2" stroke-opacity="0.7"/>
+      <text class="mono-font" x="42.5" y="22" text-anchor="middle" font-size="12" font-weight="600" fill="#38bdf8">Docker</text>
+    </g>
+
+    <!-- Pill 8: n8n (Purple) -->
+    <g transform="translate(270, -18)">
+      <rect width="75" height="34" rx="17" fill="#090d16" stroke="#a855f7" stroke-width="1.2" stroke-opacity="0.7"/>
+      <text class="mono-font" x="37.5" y="22" text-anchor="middle" font-size="12" font-weight="600" fill="#a855f7">n8n</text>
+    </g>
+
+    <!-- Pill 9: Git (Blue) -->
+    <g transform="translate(360, -18)">
+      <rect width="75" height="34" rx="17" fill="#090d16" stroke="#60a5fa" stroke-width="1.2" stroke-opacity="0.7"/>
+      <text class="mono-font" x="37.5" y="22" text-anchor="middle" font-size="12" font-weight="600" fill="#60a5fa">Git</text>
     </g>
   </g>
-
-  <!-- Outer Sci-Fi Border & Vignette Frame -->
-  <rect x="8" y="8" width="1184" height="364" rx="12" fill="none" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.3"/>
-  <rect x="14" y="14" width="1172" height="352" rx="8" fill="none" stroke="#1d4ed8" stroke-width="0.75" stroke-opacity="0.2"/>
-
-  <!-- Top bar decorative accents -->
-  <line x1="40" y1="8" x2="160" y2="8" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
-  <line x1="1040" y1="8" x2="1160" y2="8" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
-  <!-- Bottom bar decorative accents -->
-  <line x1="520" y1="372" x2="680" y2="372" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round" filter="url(#glow-soft)"/>
 </svg>
